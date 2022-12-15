@@ -1,6 +1,7 @@
 package io.github.missilemann.remnantsofcuriosity;
 
 import io.github.missilemann.remnantsofcuriosity.init.ItemInit;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.ItemStack;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -26,6 +27,11 @@ public class RemnantsOfCuriosity {
     private void enqueueIMC(final InterModEnqueueEvent event) {
         InterModComms.sendTo("curios", SlotTypeMessage.REGISTER_TYPE, () -> SlotTypePreset.CHARM.getMessageBuilder().build());
         InterModComms.sendTo("curios", SlotTypeMessage.REGISTER_TYPE, () -> SlotTypePreset.HANDS.getMessageBuilder().build());
+        InterModComms.sendTo("curios", SlotTypeMessage.REGISTER_TYPE,
+                () -> new SlotTypeMessage.Builder("waist")
+                        .priority(20)
+                        .icon(new ResourceLocation("curios:slot/waist_slot"))
+                        .build());
     }
 
     public static final CreativeModeTab TAB = new CreativeModeTab(MODID) {
