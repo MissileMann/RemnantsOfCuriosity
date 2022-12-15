@@ -24,18 +24,26 @@ public class GoblinTech extends RemnantItem {
     }
     public void onEquip(SlotContext slotContext, ItemStack stack, ItemStack newStack){
         AttributeInstance health = slotContext.entity().getAttribute(Attributes.MAX_HEALTH);
+        AttributeInstance kbRes = slotContext.entity().getAttribute(Attributes.KNOCKBACK_RESISTANCE);
         if (health != null && !health.hasModifier(healthBuff())) {
             health.addPermanentModifier(healthBuff());
+        }
+        if (kbRes != null && !kbRes.hasModifier(knockbackBuff())) {
+            kbRes.addPermanentModifier(knockbackBuff());
         }
     }
 
     public void onUnequip(SlotContext slotContext, ItemStack stack, ItemStack newStack) {
         AttributeInstance health = slotContext.entity().getAttribute(Attributes.MAX_HEALTH);
+        AttributeInstance kbRes = slotContext.entity().getAttribute(Attributes.KNOCKBACK_RESISTANCE);
         if (health != null && health.hasModifier(healthBuff())) {
             health.removeModifier(healthBuff());
             if (slotContext.entity().getHealth() > slotContext.entity().getMaxHealth()) {
                 slotContext.entity().setHealth(slotContext.entity().getMaxHealth());
             }
+        }
+        if (kbRes != null && kbRes.hasModifier(knockbackBuff())) {
+            kbRes.removeModifier(knockbackBuff());
         }
     }
 }
