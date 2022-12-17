@@ -1,9 +1,11 @@
 package io.github.missilemann.remnantsofcuriosity.item.curios;
 
+import com.google.common.collect.HashMultimap;
+import com.google.common.collect.Multimap;
 import io.github.missilemann.remnantsofcuriosity.item.RemnantItem;
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
-import net.minecraft.world.entity.ai.attributes.AttributeInstance;
+import net.minecraft.world.entity.ai.attributes.Attribute;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.item.ItemStack;
@@ -31,36 +33,16 @@ public class GoblinTech extends RemnantItem {
         return new AttributeModifier(UUID.fromString("ee02b286-e773-4002-9732-bf8e51e8de04"), "remnantsofcuriosity:goblin_tech_knockback", 0.2, AttributeModifier.Operation.ADDITION);
     }
     @Override
-    public void onEquip(SlotContext slotContext, ItemStack stack, ItemStack newStack){
-        AttributeInstance health = slotContext.entity().getAttribute(Attributes.MAX_HEALTH);
-        AttributeInstance kbRes = slotContext.entity().getAttribute(Attributes.KNOCKBACK_RESISTANCE);
-        if (health != null && !health.hasModifier(healthBuff())) {
-            health.addPermanentModifier(healthBuff());
-        }
-        if (kbRes != null && !kbRes.hasModifier(knockbackBuff())) {
-            kbRes.addPermanentModifier(knockbackBuff());
-        }
-    }
-
-    @Override
-    public void onUnequip(SlotContext slotContext, ItemStack stack, ItemStack newStack) {
-        AttributeInstance health = slotContext.entity().getAttribute(Attributes.MAX_HEALTH);
-        AttributeInstance kbRes = slotContext.entity().getAttribute(Attributes.KNOCKBACK_RESISTANCE);
-        if (health != null && health.hasModifier(healthBuff())) {
-            health.removeModifier(healthBuff());
-            if (slotContext.entity().getHealth() > slotContext.entity().getMaxHealth()) {
-                slotContext.entity().setHealth(slotContext.entity().getMaxHealth());
-            }
-        }
-        if (kbRes != null && kbRes.hasModifier(knockbackBuff())) {
-            kbRes.removeModifier(knockbackBuff());
-        }
-    }
-
-    @Override
     @OnlyIn(Dist.CLIENT)
     public void appendHoverText(ItemStack stack, @Nullable Level worldIn, List<Component> list, TooltipFlag flagIn) {
         RemnantItem.addLocalizedString(list, "tooltip.remnantsofcuriosity.goblintechinfo", ChatFormatting.GREEN);
         RemnantItem.addLocalizedString(list, "tooltip.remnantsofcuriosity.goblintechinfo2", ChatFormatting.AQUA);
+    }
+
+    public Multimap<Attribute, AttributeModifier> getAttributeModifiers(SlotContext slotContext, UUID uuid, ItemStack stack) {
+        Multimap<Attribute, AttributeModifier> attributes = HashMultimap.create();
+        attributes.put(Attributes.MAX_HEALTH,healthBuff());
+        attributes.put(Attributes.KNOCKBACK_RESISTANCE,knockbackBuff());
+        return attributes;
     }
 }
