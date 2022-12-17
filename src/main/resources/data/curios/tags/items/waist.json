@@ -1,0 +1,8 @@
+{
+  "replace": false,
+  "values": [
+    "remnantsofcuriosity:slowness_curio",
+    "remnantsofcuriosity:nausea_curio",
+    "remnantsofcuriosity:hunger_curio"
+  ]
+}
