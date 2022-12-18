@@ -33,6 +33,13 @@ public class GoblinTech extends RemnantItem {
         return new AttributeModifier(UUID.fromString("ee02b286-e773-4002-9732-bf8e51e8de04"), "remnantsofcuriosity:goblin_tech_knockback", 0.2, AttributeModifier.Operation.ADDITION);
     }
     @Override
+    public void onUnequip(SlotContext slotContext, ItemStack stack, ItemStack newStack) {
+        if (slotContext.entity().getHealth() > slotContext.entity().getMaxHealth()) {
+            slotContext.entity().setHealth(slotContext.entity().getMaxHealth());
+        }
+    }
+
+    @Override
     @OnlyIn(Dist.CLIENT)
     public void appendHoverText(ItemStack stack, @Nullable Level worldIn, List<Component> list, TooltipFlag flagIn) {
         RemnantItem.addLocalizedString(list, "tooltip.remnantsofcuriosity.goblintechinfo", ChatFormatting.GREEN);

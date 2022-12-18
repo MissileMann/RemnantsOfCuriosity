@@ -29,9 +29,9 @@ public class HungerCurio extends RemnantItem {
 
     @Override
     public void curioTick(SlotContext slot, ItemStack stack) {
-        if(slot.entity().hasEffect(immunity)) {
-            slot.entity().removeEffect(immunity);
-        }
+        //if(slot.entity().hasEffect(immunity)) {
+            //slot.entity().removeEffect(immunity);
+        //}
     }
 
     @Override

@@ -2,6 +2,7 @@
   "required": true,
   "package": "io.github.missilemann.remnantsofcuriosity.mixins",
   "compatibilityLevel": "JAVA_8",
+  "refmap": "mixins.remnantsofcuriosity.refmap.json",
   "mixins": [
     "MixinLivingEntity"
   ],

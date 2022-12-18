@@ -1,6 +1,7 @@
 package io.github.missilemann.remnantsofcuriosity.item.curios.immunitycurios;
 
 import io.github.missilemann.remnantsofcuriosity.item.RemnantItem;
+import io.github.missilemann.remnantsofcuriosity.util.Immunities;
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.effect.MobEffect;
@@ -20,7 +21,9 @@ public class WeaknessCurio extends RemnantItem {
     MobEffect immunity = WEAKNESS;
     public WeaknessCurio(Properties properties) {
         super(properties);
+        //Immunities.add()
     }
+
 
     @Override
     public void onEquip(SlotContext slotContext, ItemStack stack, ItemStack newStack) {
@@ -29,9 +32,9 @@ public class WeaknessCurio extends RemnantItem {
 
     @Override
     public void curioTick(SlotContext slot, ItemStack stack) {
-        if(slot.entity().hasEffect(immunity)) {
-            slot.entity().removeEffect(immunity);
-        }
+        //if(slot.entity().hasEffect(immunity)) {
+        //    slot.entity().removeEffect(immunity);
+        //}
     }
 
     @Override

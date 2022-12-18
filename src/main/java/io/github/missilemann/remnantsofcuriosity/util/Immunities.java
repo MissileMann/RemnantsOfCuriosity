@@ -15,6 +15,7 @@ public class Immunities {
     private static final HashMultimap<MobEffect, Item> immuneList = HashMultimap.create();
     public static void add(Item item, Set<MobEffect> effects) {
         for (MobEffect effect : effects) {
+            System.out.println(item.toString() + " and " + effect.toString() + " added to immune list");
             immuneList.put(effect, item);
         }
     }
@@ -24,8 +25,9 @@ public class Immunities {
 
         for (Item item : items) {
             Optional<SlotResult> slot = CuriosApi.getCuriosHelper().findFirstCurio(player,item);
-            if (slot.isEmpty()) {
+            if (slot.isPresent() && immuneList.get(effect).contains(item)) {
                 return false;
+                //CuriosApi.
             }
         }
         return true;
