@@ -28,13 +28,6 @@ public class SlownessCurio extends RemnantItem {
     }
 
     @Override
-    public void curioTick(SlotContext slot, ItemStack stack) {
-        if(slot.entity().hasEffect(immunity)) {
-            slot.entity().removeEffect(immunity);
-        }
-    }
-
-    @Override
     @OnlyIn(Dist.CLIENT)
     public void appendHoverText(ItemStack stack, @Nullable Level worldIn, List<Component> list, TooltipFlag flagIn) {
         RemnantItem.addLocalizedString(list, "tooltip.remnantsofcuriosity.slownesscurioinfo", ChatFormatting.BOLD, ChatFormatting.GOLD);

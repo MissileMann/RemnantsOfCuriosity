@@ -22,12 +22,12 @@ import static net.minecraft.world.effect.MobEffects.*;
 
 public class ImmunityStartUp {
     public static void init() {
+        Immunities.resetImmuneList();
         //create(WEAKNESS_CURIO, set(WEAKNESS));
         //create(SLOWNESS_CURIO, set(MOVEMENT_SLOWDOWN));
         //create(NAUSEA_CURIO, set(CONFUSION));
         //create(MINING_FATIGUE_CURIO,set(DIG_SLOWDOWN));
         //create(HUNGER_CURIO,set(HUNGER));
-
         for (Item item : ForgeRegistries.ITEMS.getValues()) {
             checkTags(item);
         }
@@ -41,40 +41,42 @@ public class ImmunityStartUp {
 
     private static void checkTags(TagKey<Item> tag, Item item) {
         if(tag == POISON_IMMUNE) {
-            create(item, set(POISON));
+            create(item, POISON);
         }
         if(tag == NAUSEA_IMMUNE) {
-            create(item, set(WEAKNESS));
+            create(item, CONFUSION);
         }
         if(tag == SLOWNESS_IMMUNE) {
-            create(item, set(MOVEMENT_SLOWDOWN));
+            create(item, MOVEMENT_SLOWDOWN);
         }
         if(tag == WEAKNESS_IMMUNE) {
-            create(item, set(WEAKNESS));
+            create(item, WEAKNESS);
         }
         if(tag == HUNGER_IMMUNE) {
-            create(item, set(HUNGER));
+            create(item, HUNGER);
         }
         if(tag == MINING_FATIGUE_IMMUNE) {
-            create(item, set(DIG_SLOWDOWN));
+            create(item, DIG_SLOWDOWN);
         }
         if(tag == BAD_LUCK_IMMUNE) {
-            create(item, set(UNLUCK));
+            create(item, UNLUCK);
         }
         if(tag == BLINDNESS_IMMUNE) {
-            create(item, set(BLINDNESS));
+            create(item, BLINDNESS);
         }
         if(tag == WITHER_IMMUNE) {
-            create(item, set(WITHER));
+            create(item, (WITHER));
         }
         if(tag == LEVITATION_IMMUNE) {
-            create(item, set(LEVITATION));
+            create(item, LEVITATION);
         }
     }
 
     public static void create(RegistryObject<Item> item, Set<MobEffect> effects) {
         Immunities.add(item.get(),effects);
     }
+
+    public static void create(Item item, MobEffect effect) { Immunities.add(item,effect); }
 
     public static void create(Item item, Set<MobEffect> effects) {
         Immunities.add(item,effects);

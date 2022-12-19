@@ -16,7 +16,7 @@ public class MixinLivingEntity {
     @Inject(method = "canBeAffected", at = @At("HEAD"), cancellable = true)
     private void isImmuneToEffect(MobEffectInstance p_21197_, CallbackInfoReturnable<Boolean> cir) {
         LivingEntity self = (LivingEntity) (Object) this;
-        System.out.println("Mixin function triggered.");
+        //System.out.println("Mixin function triggered.");
         MobEffect effect = p_21197_.getEffect();
         //cir.setReturnValue(false);
 

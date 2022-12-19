@@ -20,6 +20,15 @@ public class Immunities {
         }
     }
 
+    public static void add(Item item, MobEffect effect) {
+        System.out.println(item.toString() + " and " + effect.toString() + " added to immune list");
+        immuneList.put(effect, item);
+    }
+
+    public static void resetImmuneList() {
+        immuneList.clear();
+    }
+
     public static boolean isEffectImmune(LivingEntity player, MobEffect effect) {
         Set<Item> items = immuneList.get(effect);
 
