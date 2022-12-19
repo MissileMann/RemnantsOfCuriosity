@@ -27,10 +27,15 @@
   "tooltip.remnantsofcuriosity.withercurioinfo": "Todo Info",
   "tooltip.remnantsofcuriosity.levitationcurioinfo": "Todo Info",
   "item.remnantsofcuriosity.goblin_tech": "Ancient Goblin Technology",
+  "item.remnantsofcuriosity.sun_charm": "Sun Charm",
+  "item.remnantsofcuriosity.moon_charm": "Moon Charm",
+  "item.remnantsofcuriosity.celestial_charm": "Celestial Charm",
+  "item.remnantsofcuriosity.terra_charm": "Terra Charm",
   "item.remnantsofcuriosity.finite_belt": "Belt of Finite Space",
   "item.remnantsofcuriosity.hunger_curio": "Golden Jaw Bone",
   "item.remnantsofcuriosity.mining_fatigue_curio": "Gilded Gauntlet",
   "item.remnantsofcuriosity.nausea_curio": "Ancient Sailor's Band",
   "item.remnantsofcuriosity.slowness_curio": "Arch-Illager's Solar Fragment",
-  "item.remnantsofcuriosity.weakness_curio": "Wrought Bracer"
+  "item.remnantsofcuriosity.weakness_curio": "Wrought Bracer",
+  "item.remnantsofcuriosity.bad_luck_curio": "Skull of Fortune"
 }

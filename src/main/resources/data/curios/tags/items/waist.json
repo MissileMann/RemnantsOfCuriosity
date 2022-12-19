@@ -3,6 +3,11 @@
   "values": [
     "remnantsofcuriosity:slowness_curio",
     "remnantsofcuriosity:nausea_curio",
-    "remnantsofcuriosity:hunger_curio"
+    "remnantsofcuriosity:hunger_curio",
+    "remnantsofcuriosity:bad_luck_curio",
+    "remnantsofcuriosity:sun_charm",
+    "remnantsofcuriosity:moon_charm",
+    "remnantsofcuriosity:celestial_charm",
+    "remnantsofcuriosity:terra_charm"
   ]
 }

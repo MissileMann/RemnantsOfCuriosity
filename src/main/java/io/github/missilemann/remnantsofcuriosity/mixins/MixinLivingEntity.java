@@ -20,7 +20,7 @@ public class MixinLivingEntity {
         MobEffect effect = p_21197_.getEffect();
         //cir.setReturnValue(false);
 
-        if (!Immunities.isEffectImmune(self,effect)) {
+        if (Immunities.isEffectImmune(self,effect)) {
             cir.setReturnValue(false);
         }
     }

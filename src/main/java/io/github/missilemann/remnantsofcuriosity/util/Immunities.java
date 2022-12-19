@@ -35,10 +35,14 @@ public class Immunities {
         for (Item item : items) {
             Optional<SlotResult> slot = CuriosApi.getCuriosHelper().findFirstCurio(player,item);
             if (slot.isPresent() && immuneList.get(effect).contains(item)) {
-                return false;
-                //CuriosApi.
+                return true;
             }
         }
-        return true;
+        return false;
+    }
+
+    public static boolean isEffectImmune(LivingEntity player, MobEffect effect, Item item) {
+        Optional<SlotResult> slot = CuriosApi.getCuriosHelper().findFirstCurio(player,item);
+        return slot.isPresent() && immuneList.get(effect).contains(item);
     }
 }

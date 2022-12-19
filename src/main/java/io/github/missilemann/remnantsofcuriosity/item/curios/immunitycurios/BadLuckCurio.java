@@ -12,16 +12,17 @@ import net.minecraftforge.api.distmarker.OnlyIn;
 import javax.annotation.Nullable;
 import java.util.List;
 
-public class HungerCurio extends RemnantItem {
-    public HungerCurio(Properties properties) {
+public class BadLuckCurio extends RemnantItem{
+
+    public BadLuckCurio(Properties properties) {
         super(properties);
     }
 
     @Override
     @OnlyIn(Dist.CLIENT)
     public void appendHoverText(ItemStack stack, @Nullable Level worldIn, List<Component> list, TooltipFlag flagIn) {
-        RemnantItem.addLocalizedString(list, "tooltip.remnantsofcuriosity.hungercurioinfo", ChatFormatting.BOLD, ChatFormatting.GOLD);
+        RemnantItem.addLocalizedString(list, "tooltip.remnantsofcuriosity.badluckcurioinfo", ChatFormatting.BOLD, ChatFormatting.GOLD);
         RemnantItem.addLocalizedString(list, "tooltip.remnantsofcuriosity.immunegeneric", ChatFormatting.AQUA);
-        RemnantItem.addLocalizedString(list, "tooltip.remnantsofcuriosity.immunehunger", ChatFormatting.ITALIC, ChatFormatting.AQUA);
+        RemnantItem.addLocalizedString(list, "tooltip.remnantsofcuriosity.immunebadluck", ChatFormatting.ITALIC, ChatFormatting.AQUA);
     }
 }
