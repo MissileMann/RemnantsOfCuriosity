@@ -22,6 +22,7 @@ public class BadLuckCurio extends RemnantItem{
     @OnlyIn(Dist.CLIENT)
     public void appendHoverText(ItemStack stack, @Nullable Level worldIn, List<Component> list, TooltipFlag flagIn) {
         RemnantItem.addLocalizedString(list, "tooltip.remnantsofcuriosity.badluckcurioinfo", ChatFormatting.BOLD, ChatFormatting.GOLD);
+        RemnantItem.addLocalizedString(list, "tooltip.remnantsofcuriosity.emptyline");
         RemnantItem.addLocalizedString(list, "tooltip.remnantsofcuriosity.immunegeneric", ChatFormatting.AQUA);
         RemnantItem.addLocalizedString(list, "tooltip.remnantsofcuriosity.immunebadluck", ChatFormatting.ITALIC, ChatFormatting.AQUA);
     }

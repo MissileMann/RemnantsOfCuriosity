@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:smithing",
+  "base": {
+    "item": "remnantsofcuriosity:blindness_curio"
+  },
+  "addition": {
+    "item": "remnantsofcuriosity:slowness_curio"
+  },
+  "result": {
+    "item": "remnantsofcuriosity:infernal_eye"
+  }
+}

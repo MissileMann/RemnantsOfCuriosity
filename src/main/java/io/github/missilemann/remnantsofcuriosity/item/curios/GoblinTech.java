@@ -14,6 +14,7 @@ import net.minecraft.world.level.Level;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 import top.theillusivec4.curios.api.SlotContext;
+import net.minecraftforge.common.ForgeMod.*;
 
 import javax.annotation.Nullable;
 import java.util.List;

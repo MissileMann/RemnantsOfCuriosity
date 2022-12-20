@@ -21,7 +21,7 @@ public class ModEvents {
     public static class ForgeEvents {
         @SubscribeEvent
         public static void onCurioEquipped(CurioChangeEvent event) {
-            System.out.println("Curio has been equipped");
+
             LivingEntity player = event.getEntity();
             Collection<MobEffectInstance> effectInstances = player.getActiveEffects();
             List<MobEffect> removeEffects = new ArrayList<>();
