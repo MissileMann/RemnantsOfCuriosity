@@ -33,6 +33,7 @@
   "tooltip.remnantsofcuriosity.withercurioinfo": "Todo Info",
   "tooltip.remnantsofcuriosity.levitationcurioinfo": "Todo Info",
   "tooltip.remnantsofcuriosity.infernaleyeinfo": "It watches... angrily...",
+  "tooltip.remnantsofcuriosity.aberrantmetalinfo": "The metal is warped, yet still functions...",
   "item.remnantsofcuriosity.goblin_tech": "Ancient Goblin Technology",
   "item.remnantsofcuriosity.sun_charm": "Sun Charm",
   "item.remnantsofcuriosity.moon_charm": "Moon Charm",
@@ -49,5 +50,6 @@
   "item.remnantsofcuriosity.blindness_curio": "Crystallized Eye",
   "item.remnantsofcuriosity.wither_curio": "Wither Curio",
   "item.remnantsofcuriosity.levitation_curio": "Levitation Curio",
-  "item.remnantsofcuriosity.infernal_eye": "Infernal Eye"
+  "item.remnantsofcuriosity.infernal_eye": "Infernal Eye",
+  "item.remnantsofcuriosity.aberrant_metal": "Aberrant Metal"
 }

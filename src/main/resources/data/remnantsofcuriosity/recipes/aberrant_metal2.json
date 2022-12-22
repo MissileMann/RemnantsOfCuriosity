@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:smithing",
+  "base": {
+    "item": "remnantsofcuriosity:poison_curio"
+  },
+  "addition": {
+    "item": "remnantsofcuriosity:nausea_curio"
+  },
+  "result": {
+    "item": "remnantsofcuriosity:aberrant_metal"
+  }
+}

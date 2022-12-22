@@ -30,5 +30,6 @@ public class ItemInit {
     //public static final RegistryObject<Item> WITHER_CURIO = ITEMS.register("wither_curio", () -> new WitherCurio(new Item.Properties()));
     //public static final RegistryObject<Item> LEVITATION_CURIO = ITEMS.register("levitation_curio", () -> new LevitationCurio(new Item.Properties()));
     public static final RegistryObject<Item> INFERNAL_EYE = ITEMS.register("infernal_eye", () -> new InfernalEyeCurio(new Item.Properties()));
+    public static final RegistryObject<Item> ABERRANT_METAL = ITEMS.register("aberrant_metal", () -> new AberrantMetalCurio(new Item.Properties()));
 
 }
