@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:smithing",
+  "base": {
+    "item": "remnantsofcuriosity:sun_charm"
+  },
+  "addition": {
+    "item": "remnantsofcuriosity:moon_charm"
+  },
+  "result": {
+    "item": "remnantsofcuriosity:celestial_charm"
+  }
+}

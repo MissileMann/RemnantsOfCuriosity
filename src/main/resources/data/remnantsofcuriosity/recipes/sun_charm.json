@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "#G ",
+    "GDG",
+    " G "
+  ],
+  "key": {
+    "#": {
+      "item": "minecraft:string"
+    },
+    "G": {
+      "item": "minecraft:glowstone"
+    },
+    "D": {
+      "item": "minecraft:diamond"
+    }
+  },
+  "result": {
+    "item": "remnantsofcuriosity:sun_charm",
+    "count": 1
+  }
+}

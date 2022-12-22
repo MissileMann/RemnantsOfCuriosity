@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "#G ",
+    "GDG",
+    " G "
+  ],
+  "key": {
+    "#": {
+      "item": "minecraft:string"
+    },
+    "G": {
+      "item": "minecraft:phantom_membrane"
+    },
+    "D": {
+      "item": "minecraft:diamond"
+    }
+  },
+  "result": {
+    "item": "remnantsofcuriosity:moon_charm",
+    "count": 1
+  }
+}
