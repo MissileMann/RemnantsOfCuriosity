@@ -30,7 +30,8 @@ public class ExplorersBelt extends RemnantItem{
     }
 
     public boolean canEquip(SlotContext slotContext, ItemStack stack) {
-        return CuriosApi.getCuriosHelper().findFirstCurio(slotContext.entity(),TERRA_CHARM.get()).isEmpty() && CuriosApi.getCuriosHelper().findFirstCurio(slotContext.entity(),SPEED_BELT.get()).isEmpty();
+        return CuriosApi.getCuriosHelper().findFirstCurio(slotContext.entity(),TERRA_CHARM.get()).isEmpty() && (CuriosApi.getCuriosHelper().findFirstCurio(slotContext.entity(),SPEED_BELT.get()).isEmpty()
+                && CuriosApi.getSlotHelper().getSlotsForType(slotContext.entity(),"belt") > 1);
     }
 
     private static AttributeModifier stepBuff() {
