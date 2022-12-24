@@ -8,6 +8,7 @@ import net.minecraft.world.item.Item;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
+import org.checkerframework.checker.units.qual.Speed;
 
 public class ItemInit {
     public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, RemnantsOfCuriosity.MODID);
@@ -18,6 +19,8 @@ public class ItemInit {
     public static final RegistryObject<Item> MOON_CHARM = ITEMS.register("moon_charm", () -> new MoonCharm(new Item.Properties()));
     public static final RegistryObject<Item> CELESTIAL_CHARM = ITEMS.register("celestial_charm", () -> new CelestialCharm(new Item.Properties()));
     public static final RegistryObject<Item> TERRA_CHARM = ITEMS.register("terra_charm", () -> new TerraCharm(new Item.Properties()));
+    public static final RegistryObject<Item> SPEED_BELT = ITEMS.register("speed_belt", () -> new SpeedBelt(new Item.Properties()));
+    public static final RegistryObject<Item> EXPLORERS_BELT = ITEMS.register("explorers_belt", () -> new ExplorersBelt(new Item.Properties()));
 
     public static final RegistryObject<Item> NAUSEA_CURIO = ITEMS.register("nausea_curio", () -> new NauseaCurio(new Item.Properties()));
     public static final RegistryObject<Item> SLOWNESS_CURIO = ITEMS.register("slowness_curio", () -> new SlownessCurio(new Item.Properties()));
@@ -31,5 +34,6 @@ public class ItemInit {
     //public static final RegistryObject<Item> LEVITATION_CURIO = ITEMS.register("levitation_curio", () -> new LevitationCurio(new Item.Properties()));
     public static final RegistryObject<Item> INFERNAL_EYE = ITEMS.register("infernal_eye", () -> new InfernalEyeCurio(new Item.Properties()));
     public static final RegistryObject<Item> ABERRANT_METAL = ITEMS.register("aberrant_metal", () -> new AberrantMetalCurio(new Item.Properties()));
+    public static final RegistryObject<Item> CHARM_LOHK = ITEMS.register("charm_lohk", () -> new CharmOfLohkCurio(new Item.Properties()));
 
 }

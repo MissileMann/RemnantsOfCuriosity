@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:smithing",
+  "base": {
+    "item": "remnantsofcuriosity:terra_charm"
+  },
+  "addition": {
+    "item": "remnantsofcuriosity:speed_belt"
+  },
+  "result": {
+    "item": "remnantsofcuriosity:explorers_belt"
+  }
+}

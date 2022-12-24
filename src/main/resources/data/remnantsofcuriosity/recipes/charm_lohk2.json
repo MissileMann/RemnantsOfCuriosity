@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:smithing",
+  "base": {
+    "item": "remnantsofcuriosity:mining_fatigue_curio"
+  },
+  "addition": {
+    "item": "remnantsofcuriosity:weakness_curio"
+  },
+  "result": {
+    "item": "remnantsofcuriosity:aberrant_metal"
+  }
+}

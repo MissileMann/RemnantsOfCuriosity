@@ -27,8 +27,6 @@ public class RemnantsOfCuriosity {
     }
 
     private void enqueueIMC(final InterModEnqueueEvent event) {
-        //InterModComms.sendTo("curios", SlotTypeMessage.REGISTER_TYPE, () -> SlotTypePreset.CHARM.getMessageBuilder().size(3).build());
-        //InterModComms.sendTo("curios", SlotTypeMessage.REGISTER_TYPE, () -> SlotTypePreset.HANDS.getMessageBuilder().size(1).build());
         InterModComms.sendTo("curios", SlotTypeMessage.REGISTER_TYPE, () -> SlotTypePreset.BELT.getMessageBuilder().size(1).build());
         InterModComms.sendTo("curios", SlotTypeMessage.REGISTER_TYPE,
                 () -> new SlotTypeMessage.Builder("waist")
@@ -36,7 +34,6 @@ public class RemnantsOfCuriosity {
                         .size(3)
                         .icon(new ResourceLocation("curios:slot/waist_slot"))
                         .build());
-        //ImmunityStartUp.init();
     }
 
     public static final CreativeModeTab TAB = new CreativeModeTab(MODID) {

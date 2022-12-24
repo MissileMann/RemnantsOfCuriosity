@@ -1,6 +1,8 @@
 {
   "replace": false,
   "values": [
-    "remnantsofcuriosity:finite_belt"
+    "remnantsofcuriosity:finite_belt",
+    "remnantsofcuriosity:speed_belt",
+    "remnantsofcuriosity:explorers_belt"
   ]
 }

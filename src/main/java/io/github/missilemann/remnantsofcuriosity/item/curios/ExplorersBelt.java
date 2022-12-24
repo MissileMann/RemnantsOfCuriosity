@@ -21,34 +21,39 @@ import javax.annotation.Nullable;
 import java.util.List;
 import java.util.UUID;
 
-import static io.github.missilemann.remnantsofcuriosity.init.ItemInit.CELESTIAL_CHARM;
-import static io.github.missilemann.remnantsofcuriosity.init.ItemInit.EXPLORERS_BELT;
+import static io.github.missilemann.remnantsofcuriosity.init.ItemInit.*;
 
-public class TerraCharm extends RemnantItem {
-    public TerraCharm(Properties properties) {
+public class ExplorersBelt extends RemnantItem{
+
+    public ExplorersBelt(Properties properties) {
         super(properties);
     }
 
-    private static AttributeModifier stepBuff() {
-        return new AttributeModifier(UUID.fromString("04a9833c-79d7-46a1-8ec2-8132cd93c7c8"), "remnantsofcuriosity:terra_charm_step_height", 0.5, AttributeModifier.Operation.ADDITION);
-    }
-
     public boolean canEquip(SlotContext slotContext, ItemStack stack) {
-        return CuriosApi.getCuriosHelper().findFirstCurio(slotContext.entity(),EXPLORERS_BELT.get()).isEmpty();
+        return CuriosApi.getCuriosHelper().findFirstCurio(slotContext.entity(),TERRA_CHARM.get()).isEmpty() && CuriosApi.getCuriosHelper().findFirstCurio(slotContext.entity(),SPEED_BELT.get()).isEmpty();
     }
 
-    @Override
-    @OnlyIn(Dist.CLIENT)
-    public void appendHoverText(ItemStack stack, @Nullable Level worldIn, List<Component> list, TooltipFlag flagIn) {
-        RemnantItem.addLocalizedString(list, "tooltip.remnantsofcuriosity.terracharminfo", ChatFormatting.GOLD);
+    private static AttributeModifier stepBuff() {
+        return new AttributeModifier(UUID.fromString("b001a380-35f2-48de-8a32-431eb7caed5b"), "remnantsofcuriosity:explorers_belt_step_height", 0.5, AttributeModifier.Operation.ADDITION);
+    }
+
+    private static AttributeModifier speedBuff() {
+        return new AttributeModifier(UUID.fromString("005bc8b9-f3a5-463d-a7fa-114e07a48681"), "remnantsofcuriosity:explorers_belt_buff", 0.03, AttributeModifier.Operation.ADDITION);
     }
 
     @Override
     public Multimap<Attribute, AttributeModifier> getAttributeModifiers(SlotContext slotContext, UUID uuid, ItemStack stack) {
         Multimap<Attribute, AttributeModifier> attributes = HashMultimap.create();
+
+        attributes.put(Attributes.MOVEMENT_SPEED,speedBuff());
         attributes.put(ForgeMod.STEP_HEIGHT_ADDITION.get(), stepBuff());
+
         return attributes;
     }
+
+    @Override
+    @OnlyIn(Dist.CLIENT)
+    public void appendHoverText(ItemStack stack, @Nullable Level worldIn, List<Component> list, TooltipFlag flagIn) {
+        RemnantItem.addLocalizedString(list, "tooltip.remnantsofcuriosity.explorersbeltinfo", ChatFormatting.AQUA);
+    }
 }
-
-
