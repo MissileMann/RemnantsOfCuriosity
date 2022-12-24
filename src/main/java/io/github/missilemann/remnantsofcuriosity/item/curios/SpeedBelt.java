@@ -21,6 +21,7 @@ import java.util.List;
 import java.util.UUID;
 
 import static io.github.missilemann.remnantsofcuriosity.init.ItemInit.EXPLORERS_BELT;
+import static io.github.missilemann.remnantsofcuriosity.init.ItemInit.SPEED_BELT;
 
 public class SpeedBelt extends RemnantItem{
 
@@ -29,7 +30,12 @@ public class SpeedBelt extends RemnantItem{
     }
 
     public boolean canEquip(SlotContext slotContext, ItemStack stack) {
-        return CuriosApi.getCuriosHelper().findFirstCurio(slotContext.entity(),EXPLORERS_BELT.get()).isEmpty();
+        if (CuriosApi.getSlotHelper().getSlotsForType(slotContext.entity(),"belt") > 1 && CuriosApi.getCuriosHelper().findFirstCurio(slotContext.entity(),EXPLORERS_BELT.get()).isPresent()) {
+            return false;
+        }
+        else {
+            return true;
+        }
     }
 
     private static AttributeModifier speedBuff() {
