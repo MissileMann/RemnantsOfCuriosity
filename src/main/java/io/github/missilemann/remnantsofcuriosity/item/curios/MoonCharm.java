@@ -33,7 +33,7 @@ public class MoonCharm extends RemnantItem {
     }
 
     private static AttributeModifier knockbackBuff() {
-        return new AttributeModifier(UUID.fromString("4ffc3807-c890-4dd0-ba2d-62db6898ed07"), "remnantsofcuriosity:moon_charm_knockback", 0.1, AttributeModifier.Operation.ADDITION);
+        return new AttributeModifier(UUID.fromString("4ffc3807-c890-4dd0-ba2d-62db6898ed07"), "remnantsofcuriosity:moon_charm_knockback", 0.2, AttributeModifier.Operation.ADDITION);
     }
 
     public boolean canEquip(SlotContext slotContext, ItemStack stack) {

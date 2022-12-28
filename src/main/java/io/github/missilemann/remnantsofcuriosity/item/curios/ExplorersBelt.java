@@ -46,7 +46,7 @@ public class ExplorersBelt extends RemnantItem{
     }
 
     private static AttributeModifier speedBuff() {
-        return new AttributeModifier(UUID.fromString("005bc8b9-f3a5-463d-a7fa-114e07a48681"), "remnantsofcuriosity:explorers_belt_buff", 0.03, AttributeModifier.Operation.ADDITION);
+        return new AttributeModifier(UUID.fromString("005bc8b9-f3a5-463d-a7fa-114e07a48681"), "remnantsofcuriosity:explorers_belt_buff", 0.3, AttributeModifier.Operation.MULTIPLY_BASE);
     }
 
     @Override

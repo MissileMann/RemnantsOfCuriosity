@@ -34,7 +34,7 @@ public class CelestialCharm extends RemnantItem {
     }
 
     private static AttributeModifier knockbackBuff() {
-        return new AttributeModifier(UUID.fromString("a0ef1534-8002-11ed-b912-1b0128ab6733"), "remnantsofcuriosity:cel_charm_knockback", 0.1, AttributeModifier.Operation.ADDITION);
+        return new AttributeModifier(UUID.fromString("a0ef1534-8002-11ed-b912-1b0128ab6733"), "remnantsofcuriosity:cel_charm_knockback", 0.2, AttributeModifier.Operation.ADDITION);
     }
 
     private static AttributeModifier attackSpeedBuff() {

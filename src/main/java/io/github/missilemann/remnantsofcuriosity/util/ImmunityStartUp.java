@@ -23,7 +23,7 @@ import static net.minecraft.world.effect.MobEffects.*;
 public class ImmunityStartUp {
     public static void init() {
         Immunities.resetImmuneList();
-        //create(WEAKNESS_CURIO, set(WEAKNESS));
+        create(WEAKNESS_CURIO, set(WEAKNESS));
         //create(SLOWNESS_CURIO, set(MOVEMENT_SLOWDOWN));
         //create(NAUSEA_CURIO, set(CONFUSION));
         //create(MINING_FATIGUE_CURIO,set(DIG_SLOWDOWN));
@@ -39,6 +39,8 @@ public class ImmunityStartUp {
         }
     }
 
+
+    //change this to enum in the future
     private static void checkTags(TagKey<Item> tag, Item item) {
         if(tag == POISON_IMMUNE) {
             create(item, POISON);

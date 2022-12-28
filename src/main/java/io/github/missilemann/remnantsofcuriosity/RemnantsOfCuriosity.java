@@ -1,5 +1,6 @@
 package io.github.missilemann.remnantsofcuriosity;
 
+import io.github.missilemann.remnantsofcuriosity.init.AttributesInit;
 import io.github.missilemann.remnantsofcuriosity.init.ItemInit;
 import io.github.missilemann.remnantsofcuriosity.util.ImmunityStartUp;
 import net.minecraft.resources.ResourceLocation;
@@ -24,14 +25,17 @@ public class RemnantsOfCuriosity {
 
         bus.addListener(this::enqueueIMC);
         ItemInit.ITEMS.register(bus);
+        AttributesInit.ATTRIBUTES.register(bus);
     }
 
     private void enqueueIMC(final InterModEnqueueEvent event) {
+        InterModComms.sendTo("curios", SlotTypeMessage.REGISTER_TYPE, () -> SlotTypePreset.HANDS.getMessageBuilder().size(1).build());
+        InterModComms.sendTo("curios", SlotTypeMessage.REGISTER_TYPE, () -> SlotTypePreset.CHARM.getMessageBuilder().size(2).build());
         InterModComms.sendTo("curios", SlotTypeMessage.REGISTER_TYPE, () -> SlotTypePreset.BELT.getMessageBuilder().size(1).build());
         InterModComms.sendTo("curios", SlotTypeMessage.REGISTER_TYPE,
                 () -> new SlotTypeMessage.Builder("waist")
                         .priority(181)
-                        .size(3)
+                        .size(2)
                         .icon(new ResourceLocation("curios:slot/waist_slot"))
                         .build());
     }

@@ -39,7 +39,7 @@ public class SpeedBelt extends RemnantItem{
     }
 
     private static AttributeModifier speedBuff() {
-        return new AttributeModifier(UUID.fromString("183e7c11-9bc1-454b-9b93-fc85533af59d"), "remnantsofcuriosity:speed_belt_buff", 0.03, AttributeModifier.Operation.ADDITION);
+        return new AttributeModifier(UUID.fromString("183e7c11-9bc1-454b-9b93-fc85533af59d"), "remnantsofcuriosity:speed_belt_buff", 0.3, AttributeModifier.Operation.MULTIPLY_BASE);
     }
 
     @Override

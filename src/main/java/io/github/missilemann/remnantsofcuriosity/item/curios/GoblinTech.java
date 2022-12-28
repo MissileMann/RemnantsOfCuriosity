@@ -13,8 +13,9 @@ import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.level.Level;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
+import org.jetbrains.annotations.Contract;
+import org.jetbrains.annotations.NotNull;
 import top.theillusivec4.curios.api.SlotContext;
-import net.minecraftforge.common.ForgeMod.*;
 
 import javax.annotation.Nullable;
 import java.util.List;
@@ -26,15 +27,17 @@ public class GoblinTech extends RemnantItem {
         super(properties);
     }
 
-    private static AttributeModifier healthBuff() {
+    @Contract(" -> new")
+    private static @NotNull AttributeModifier healthBuff() {
         return new AttributeModifier(UUID.fromString("50f83ec8-2ed5-421b-ad4e-25a53deded89"), "remnantsofcuriosity:goblin_tech_health", 4, AttributeModifier.Operation.ADDITION);
     }
 
-    private static AttributeModifier knockbackBuff() {
-        return new AttributeModifier(UUID.fromString("ee02b286-e773-4002-9732-bf8e51e8de04"), "remnantsofcuriosity:goblin_tech_knockback", 0.2, AttributeModifier.Operation.ADDITION);
+    @Contract(" -> new")
+    private static @NotNull AttributeModifier knockbackBuff() {
+        return new AttributeModifier(UUID.fromString("ee02b286-e773-4002-9732-bf8e51e8de04"), "remnantsofcuriosity:goblin_tech_knockback", 0.1, AttributeModifier.Operation.ADDITION);
     }
     @Override
-    public void onUnequip(SlotContext slotContext, ItemStack stack, ItemStack newStack) {
+    public void onUnequip(@NotNull SlotContext slotContext, ItemStack stack, ItemStack newStack) {
         if (slotContext.entity().getHealth() > slotContext.entity().getMaxHealth()) {
             slotContext.entity().setHealth(slotContext.entity().getMaxHealth());
         }
