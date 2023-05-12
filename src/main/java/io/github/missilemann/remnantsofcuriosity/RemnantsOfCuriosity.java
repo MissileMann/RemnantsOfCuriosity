@@ -2,13 +2,11 @@ package io.github.missilemann.remnantsofcuriosity;
 
 import io.github.missilemann.remnantsofcuriosity.init.AttributesInit;
 import io.github.missilemann.remnantsofcuriosity.init.ItemInit;
-import io.github.missilemann.remnantsofcuriosity.util.ImmunityStartUp;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.ItemStack;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.InterModComms;
-import net.minecraftforge.fml.ModList;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.InterModEnqueueEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;

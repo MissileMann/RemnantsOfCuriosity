@@ -2,15 +2,20 @@ package io.github.missilemann.remnantsofcuriosity.init;
 
 import io.github.missilemann.remnantsofcuriosity.RemnantsOfCuriosity;
 import io.github.missilemann.remnantsofcuriosity.item.curios.*;
+import io.github.missilemann.remnantsofcuriosity.item.curios.aberrantcurios.AberrantGoblinTech;
 import io.github.missilemann.remnantsofcuriosity.item.curios.immunitycurios.*;
 import io.github.missilemann.remnantsofcuriosity.item.curios.immunitycurios.combocurios.*;
+import net.minecraft.ChatFormatting;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.Rarity;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 import org.checkerframework.checker.units.qual.Speed;
 
 public class ItemInit {
+
+    public static final Rarity ABERRANT = Rarity.create("ABERRANT", ChatFormatting.RED);
     public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, RemnantsOfCuriosity.MODID);
 
     public static final RegistryObject<Item> GOBLIN_TECH = ITEMS.register("goblin_tech", () -> new GoblinTech(new Item.Properties()));
@@ -35,5 +40,7 @@ public class ItemInit {
     public static final RegistryObject<Item> INFERNAL_EYE = ITEMS.register("infernal_eye", () -> new InfernalEyeCurio(new Item.Properties()));
     public static final RegistryObject<Item> ABERRANT_METAL = ITEMS.register("aberrant_metal", () -> new AberrantMetalCurio(new Item.Properties()));
     public static final RegistryObject<Item> CHARM_LOHK = ITEMS.register("charm_lohk", () -> new CharmOfLohkCurio(new Item.Properties()));
+
+    public static final RegistryObject<Item> ABERRANT_GOBLIN_TECH = ITEMS.register("aberrant_goblin_tech", () -> new AberrantGoblinTech(new Item.Properties()));
 
 }

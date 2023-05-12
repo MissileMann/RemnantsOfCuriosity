@@ -60,5 +60,8 @@
   "item.remnantsofcuriosity.levitation_curio": "Levitation Curio",
   "item.remnantsofcuriosity.infernal_eye": "Infernal Eye",
   "item.remnantsofcuriosity.aberrant_metal": "Aberrant Metal",
-  "item.remnantsofcuriosity.charm_lohk": "Charm of Lohk"
+  "item.remnantsofcuriosity.charm_lohk": "Charm of Lohk",
+  "item.remnantsofcuriosity.aberrant_goblin_tech": "Aberrant Goblin Technology",
+  "tooltip.remnantsofcuriosity.aberrantgoblintechinfo": "A failed experiment... dark energy resonates...",
+  "tooltip.remnantsofcuriosity.aberrantgoblintechinfo2": "Grants bonus health and sturdiness, at a cost..."
 }
