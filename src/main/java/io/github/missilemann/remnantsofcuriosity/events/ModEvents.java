@@ -7,11 +7,9 @@ import io.github.missilemann.remnantsofcuriosity.util.Immunities;
 import io.github.missilemann.remnantsofcuriosity.util.ImmunityStartUp;
 import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffectInstance;
-import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraftforge.event.OnDatapackSyncEvent;
-import net.minecraftforge.event.entity.living.LivingAttackEvent;
 import net.minecraftforge.event.entity.living.LivingHurtEvent;
 import net.minecraftforge.event.entity.player.AttackEntityEvent;
 import net.minecraftforge.event.entity.player.CriticalHitEvent;
@@ -50,27 +48,30 @@ public class ModEvents {
             double attributeValue;
             float damage = event.getAmount();
             float resist;
-            if (event.getSource().isExplosion()) {
-                attributeValue = player.getAttributes().getValue(AttributesInit.BLAST_IMMUNITY.get());
-                if (attributeValue > 0.0) {
-                    resist = (float) (attributeValue / 10) * damage;
-                    event.setAmount(damage - resist);
+            if (player instanceof Player) { //could be a better condition in the future
+                if (event.getSource().isExplosion()) {
+                    attributeValue = player.getAttributes().getValue(AttributesInit.BLAST_IMMUNITY.get());
+                    if (attributeValue > 0.0) {
+                        resist = (float) (attributeValue / 10) * damage;
+                        event.setAmount(damage - resist);
+                    }
+                }
+                else if (event.getSource().isMagic()) {
+                    attributeValue = player.getAttributes().getValue(AttributesInit.MAGIC_IMMUNITY.get());
+                    if (attributeValue > 0.0) {
+                        resist = (float) (attributeValue / 10) * damage;
+                        event.setAmount(damage - resist);
+                    }
+                }
+                else if (event.getSource().isProjectile()) {
+                    attributeValue = player.getAttributes().getValue(AttributesInit.PROJECTILE_IMMUNITY.get());
+                    if (attributeValue > 0.0) {
+                        resist = (float) (attributeValue / 10) * damage;
+                        event.setAmount(damage - resist);
+                    }
                 }
             }
-            else if (event.getSource().isMagic()) {
-                attributeValue = player.getAttributes().getValue(AttributesInit.MAGIC_IMMUNITY.get());
-                if (attributeValue > 0.0) {
-                    resist = (float) (attributeValue / 10) * damage;
-                    event.setAmount(damage - resist);
-                }
-            }
-            else if (event.getSource().isProjectile()) {
-                attributeValue = player.getAttributes().getValue(AttributesInit.PROJECTILE_IMMUNITY.get());
-                if (attributeValue > 0.0) {
-                    resist = (float) (attributeValue / 10) * damage;
-                    event.setAmount(damage - resist);
-                }
-            }
+
         }
 
         @SubscribeEvent
