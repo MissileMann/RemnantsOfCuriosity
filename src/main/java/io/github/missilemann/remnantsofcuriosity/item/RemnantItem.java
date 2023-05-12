@@ -5,7 +5,6 @@ import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.Rarity;
 import top.theillusivec4.curios.api.SlotContext;
 import top.theillusivec4.curios.api.type.capability.ICurioItem;
 
@@ -14,13 +13,10 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
-import static javax.swing.text.StyleConstants.Italic;
-import static net.minecraft.world.effect.MobEffects.*;
-
 public class RemnantItem extends Item implements ICurioItem {
 
     public RemnantItem(Properties properties) {
-        super(properties.stacksTo(1).tab(RemnantsOfCuriosity.TAB).rarity(Rarity.EPIC).fireResistant());
+        super(properties.stacksTo(1).tab(RemnantsOfCuriosity.TAB).fireResistant());
     }
     @Override
     public boolean canEquipFromUse(SlotContext slotContext, ItemStack stack) {
