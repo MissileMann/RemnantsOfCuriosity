@@ -55,6 +55,10 @@ public class ModEvents {
                         resist = (float) (attributeValue / 10) * damage;
                         event.setAmount(damage - resist);
                     }
+                    else if (attributeValue < 0.0) {
+                        resist = (float) (Math.abs(attributeValue) / 10) * damage;
+                        event.setAmount(damage + resist);
+                    }
                 }
                 else if (event.getSource().isMagic()) {
                     attributeValue = player.getAttributes().getValue(AttributesInit.MAGIC_IMMUNITY.get());
@@ -62,12 +66,20 @@ public class ModEvents {
                         resist = (float) (attributeValue / 10) * damage;
                         event.setAmount(damage - resist);
                     }
+                    else if (attributeValue < 0.0) {
+                        resist = (float) (Math.abs(attributeValue) / 10) * damage;
+                        event.setAmount(damage + resist);
+                    }
                 }
                 else if (event.getSource().isProjectile()) {
                     attributeValue = player.getAttributes().getValue(AttributesInit.PROJECTILE_IMMUNITY.get());
                     if (attributeValue > 0.0) {
                         resist = (float) (attributeValue / 10) * damage;
                         event.setAmount(damage - resist);
+                    }
+                    else if (attributeValue < 0.0) {
+                        resist = (float) (Math.abs(attributeValue) / 10) * damage;
+                        event.setAmount(damage + resist);
                     }
                 }
             }
