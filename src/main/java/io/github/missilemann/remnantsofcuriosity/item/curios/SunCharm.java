@@ -2,6 +2,7 @@ package io.github.missilemann.remnantsofcuriosity.item.curios;
 
 import com.google.common.collect.HashMultimap;
 import com.google.common.collect.Multimap;
+import io.github.missilemann.remnantsofcuriosity.item.RemnantCurio;
 import io.github.missilemann.remnantsofcuriosity.item.RemnantItem;
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
@@ -24,7 +25,7 @@ import java.util.UUID;
 
 import static io.github.missilemann.remnantsofcuriosity.init.ItemInit.CELESTIAL_CHARM;
 
-public class SunCharm extends RemnantItem {
+public class SunCharm extends RemnantCurio {
     public SunCharm(Properties properties) {
         super(properties);
     }

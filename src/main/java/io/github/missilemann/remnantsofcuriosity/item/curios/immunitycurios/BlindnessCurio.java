@@ -1,5 +1,6 @@
 package io.github.missilemann.remnantsofcuriosity.item.curios.immunitycurios;
 
+import io.github.missilemann.remnantsofcuriosity.item.ImmunityCurio;
 import io.github.missilemann.remnantsofcuriosity.item.RemnantItem;
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
@@ -12,7 +13,7 @@ import net.minecraftforge.api.distmarker.OnlyIn;
 import javax.annotation.Nullable;
 import java.util.List;
 
-public class BlindnessCurio extends RemnantItem {
+public class BlindnessCurio extends ImmunityCurio {
 
     public BlindnessCurio(Properties properties) {
         super(properties);

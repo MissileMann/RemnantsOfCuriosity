@@ -2,6 +2,7 @@ package io.github.missilemann.remnantsofcuriosity.item.curios;
 
 import com.google.common.collect.HashMultimap;
 import com.google.common.collect.Multimap;
+import io.github.missilemann.remnantsofcuriosity.item.RemnantCurio;
 import io.github.missilemann.remnantsofcuriosity.item.RemnantItem;
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
@@ -23,7 +24,7 @@ import java.util.UUID;
 import static io.github.missilemann.remnantsofcuriosity.init.ItemInit.EXPLORERS_BELT;
 import static io.github.missilemann.remnantsofcuriosity.init.ItemInit.SPEED_BELT;
 
-public class SpeedBelt extends RemnantItem{
+public class SpeedBelt extends RemnantCurio {
 
     public SpeedBelt(Properties properties) {
         super(properties);

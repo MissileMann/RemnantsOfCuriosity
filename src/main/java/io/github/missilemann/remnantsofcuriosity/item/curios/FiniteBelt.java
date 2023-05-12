@@ -2,6 +2,7 @@ package io.github.missilemann.remnantsofcuriosity.item.curios;
 
 import com.google.common.collect.HashMultimap;
 import com.google.common.collect.Multimap;
+import io.github.missilemann.remnantsofcuriosity.item.RemnantCurio;
 import io.github.missilemann.remnantsofcuriosity.item.RemnantItem;
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
@@ -19,7 +20,7 @@ import javax.annotation.Nullable;
 import java.util.List;
 import java.util.UUID;
 
-public class FiniteBelt extends RemnantItem {
+public class FiniteBelt extends RemnantCurio {
 
     public FiniteBelt(Properties properties) {
         super(properties);

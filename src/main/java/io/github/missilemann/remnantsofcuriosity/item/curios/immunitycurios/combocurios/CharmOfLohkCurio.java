@@ -1,5 +1,6 @@
 package io.github.missilemann.remnantsofcuriosity.item.curios.immunitycurios.combocurios;
 
+import io.github.missilemann.remnantsofcuriosity.item.ImmunityCurio;
 import io.github.missilemann.remnantsofcuriosity.item.RemnantItem;
 import net.minecraft.ChatFormatting;
 import net.minecraft.client.gui.screens.Screen;
@@ -13,7 +14,7 @@ import net.minecraftforge.api.distmarker.OnlyIn;
 import javax.annotation.Nullable;
 import java.util.List;
 
-public class CharmOfLohkCurio extends RemnantItem {
+public class CharmOfLohkCurio extends ImmunityCurio {
     public CharmOfLohkCurio(Properties properties) {
         super(properties);
     }

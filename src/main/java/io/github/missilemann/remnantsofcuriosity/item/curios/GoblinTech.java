@@ -2,6 +2,7 @@ package io.github.missilemann.remnantsofcuriosity.item.curios;
 
 import com.google.common.collect.HashMultimap;
 import com.google.common.collect.Multimap;
+import io.github.missilemann.remnantsofcuriosity.item.RemnantCurio;
 import io.github.missilemann.remnantsofcuriosity.item.RemnantItem;
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
@@ -15,13 +16,17 @@ import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 import org.jetbrains.annotations.Contract;
 import org.jetbrains.annotations.NotNull;
+import top.theillusivec4.curios.api.CuriosApi;
 import top.theillusivec4.curios.api.SlotContext;
 
 import javax.annotation.Nullable;
 import java.util.List;
 import java.util.UUID;
 
-public class GoblinTech extends RemnantItem {
+import static io.github.missilemann.remnantsofcuriosity.init.ItemInit.ABERRANT_GOBLIN_TECH;
+import static io.github.missilemann.remnantsofcuriosity.init.ItemInit.GOBLIN_TECH;
+
+public class GoblinTech extends RemnantCurio {
 
     public GoblinTech(Properties properties) {
         super(properties);
@@ -41,6 +46,10 @@ public class GoblinTech extends RemnantItem {
         if (slotContext.entity().getHealth() > slotContext.entity().getMaxHealth()) {
             slotContext.entity().setHealth(slotContext.entity().getMaxHealth());
         }
+    }
+
+    public boolean canEquip(SlotContext slotContext, ItemStack stack) {
+        return CuriosApi.getCuriosHelper().findFirstCurio(slotContext.entity(),ABERRANT_GOBLIN_TECH.get()).isEmpty();
     }
 
     @Override
