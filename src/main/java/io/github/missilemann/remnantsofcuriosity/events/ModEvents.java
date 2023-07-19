@@ -11,8 +11,10 @@ import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraftforge.event.OnDatapackSyncEvent;
 import net.minecraftforge.event.entity.living.LivingHurtEvent;
+import net.minecraftforge.event.entity.living.MobEffectEvent;
 import net.minecraftforge.event.entity.player.AttackEntityEvent;
 import net.minecraftforge.event.entity.player.CriticalHitEvent;
+import net.minecraftforge.eventbus.api.Event;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import top.theillusivec4.curios.api.event.CurioChangeEvent;
@@ -89,6 +91,15 @@ public class ModEvents {
         @SubscribeEvent
         public static void onAttack(AttackEntityEvent event) {
             //event.getSource().
+        }
+
+        @SubscribeEvent
+        public static void ImmunityCheck(MobEffectEvent.Applicable event) {
+            LivingEntity self = event.getEntity();
+            MobEffect effect = event.getEffectInstance().getEffect();
+            if (Immunities.isEffectImmune(self,effect)) {
+                event.setResult(Event.Result.DENY);
+            }
         }
 
         @SubscribeEvent
