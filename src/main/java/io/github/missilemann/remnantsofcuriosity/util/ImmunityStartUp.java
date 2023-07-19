@@ -1,29 +1,23 @@
 package io.github.missilemann.remnantsofcuriosity.util;
 
-import com.mojang.serialization.Codec;
-import io.github.missilemann.remnantsofcuriosity.RemnantsOfCuriosity;
-import net.minecraft.resources.ResourceKey;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.item.Item;
-import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.Items;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
-import top.theillusivec4.curios.api.CuriosApi;
 
-import java.util.*;
-import java.util.stream.Collectors;
-import java.util.stream.Stream;
+import java.util.Arrays;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
 
-import static io.github.missilemann.remnantsofcuriosity.init.ItemInit.*;
 import static io.github.missilemann.remnantsofcuriosity.util.ModTags.Tags.*;
 import static net.minecraft.world.effect.MobEffects.*;
 
 public class ImmunityStartUp {
     public static void init() {
         Immunities.resetImmuneList();
-        create(WEAKNESS_CURIO, set(WEAKNESS));
+        //create(WEAKNESS_CURIO, set(WEAKNESS));
         //create(SLOWNESS_CURIO, set(MOVEMENT_SLOWDOWN));
         //create(NAUSEA_CURIO, set(CONFUSION));
         //create(MINING_FATIGUE_CURIO,set(DIG_SLOWDOWN));
