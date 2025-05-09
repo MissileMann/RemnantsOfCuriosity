@@ -17,11 +17,6 @@ import static net.minecraft.world.effect.MobEffects.*;
 public class ImmunityStartUp {
     public static void init() {
         Immunities.resetImmuneList();
-        //create(WEAKNESS_CURIO, set(WEAKNESS));
-        //create(SLOWNESS_CURIO, set(MOVEMENT_SLOWDOWN));
-        //create(NAUSEA_CURIO, set(CONFUSION));
-        //create(MINING_FATIGUE_CURIO,set(DIG_SLOWDOWN));
-        //create(HUNGER_CURIO,set(HUNGER));
         for (Item item : ForgeRegistries.ITEMS.getValues()) {
             checkTags(item);
         }
