@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "remnantsofcuriosity:items/finite_belt"
+    "layer0": "remnantsofcuriosity:item/finite_belt"
   }
 }

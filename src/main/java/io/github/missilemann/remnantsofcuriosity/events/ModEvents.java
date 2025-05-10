@@ -5,6 +5,9 @@ import io.github.missilemann.remnantsofcuriosity.RemnantsOfCuriosity;
 import io.github.missilemann.remnantsofcuriosity.init.AttributesInit;
 import io.github.missilemann.remnantsofcuriosity.util.Immunities;
 import io.github.missilemann.remnantsofcuriosity.util.ImmunityStartUp;
+import net.minecraft.tags.DamageTypeTags;
+import net.minecraft.world.damagesource.DamageType;
+import net.minecraft.world.damagesource.DamageTypes;
 import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.entity.LivingEntity;
@@ -51,7 +54,7 @@ public class ModEvents {
             float damage = event.getAmount();
             float resist;
             if (player instanceof Player) { //could be a better condition in the future
-                if (event.getSource().isExplosion()) {
+                if (event.getSource().is(DamageTypes.EXPLOSION) || event.getSource().is(DamageTypeTags.IS_EXPLOSION)) {
                     attributeValue = player.getAttributes().getValue(AttributesInit.BLAST_IMMUNITY.get());
                     if (attributeValue > 0.0) {
                         resist = (float) (attributeValue / 10) * damage;
@@ -62,7 +65,7 @@ public class ModEvents {
                         event.setAmount(damage + resist);
                     }
                 }
-                else if (event.getSource().isMagic()) {
+                else if (event.getSource().is(DamageTypes.MAGIC)) {
                     attributeValue = player.getAttributes().getValue(AttributesInit.MAGIC_IMMUNITY.get());
                     if (attributeValue > 0.0) {
                         resist = (float) (attributeValue / 10) * damage;
@@ -73,7 +76,7 @@ public class ModEvents {
                         event.setAmount(damage + resist);
                     }
                 }
-                else if (event.getSource().isProjectile()) {
+                else if (event.getSource().is(DamageTypes.ARROW) || event.getSource().is(DamageTypeTags.IS_PROJECTILE)) {
                     attributeValue = player.getAttributes().getValue(AttributesInit.PROJECTILE_IMMUNITY.get());
                     if (attributeValue > 0.0) {
                         resist = (float) (attributeValue / 10) * damage;

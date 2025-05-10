@@ -51,7 +51,7 @@ public class SunCharm extends RemnantCurio {
     public Multimap<Attribute, AttributeModifier> getAttributeModifiers(SlotContext slotContext, UUID uuid, ItemStack stack) {
         Multimap<Attribute, AttributeModifier> attributes = HashMultimap.create();
         attributes.put(Attributes.ATTACK_SPEED,attackSpeedBuff());
-        attributes.put(ForgeMod.ATTACK_RANGE.get(), rangeBuff());
+        attributes.put(ForgeMod.ENTITY_REACH.get(), rangeBuff());
         return attributes;
     }
 }

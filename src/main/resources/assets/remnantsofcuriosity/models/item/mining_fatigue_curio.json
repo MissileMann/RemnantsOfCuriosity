@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "remnantsofcuriosity:items/mining_fatigue_curio"
+    "layer0": "remnantsofcuriosity:item/mining_fatigue_curio"
   }
 }

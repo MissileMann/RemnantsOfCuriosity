@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "remnantsofcuriosity:items/charm_lohk"
+    "layer0": "remnantsofcuriosity:item/charm_lohk"
   }
 }

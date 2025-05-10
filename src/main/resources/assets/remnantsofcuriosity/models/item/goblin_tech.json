@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "remnantsofcuriosity:items/goblin_tech"
+    "layer0": "remnantsofcuriosity:item/goblin_tech"
   }
 }

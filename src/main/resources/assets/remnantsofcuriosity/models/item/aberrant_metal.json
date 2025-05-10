@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "remnantsofcuriosity:items/aberrant_metal"
+    "layer0": "remnantsofcuriosity:item/aberrant_metal"
   }
 }

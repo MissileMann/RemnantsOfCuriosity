@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "remnantsofcuriosity:items/terra_charm"
+    "layer0": "remnantsofcuriosity:item/terra_charm"
   }
 }

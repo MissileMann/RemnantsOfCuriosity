@@ -16,7 +16,7 @@ import java.util.Set;
 public class RemnantItem extends Item implements ICurioItem {
 
     public RemnantItem(Properties properties) {
-        super(properties.stacksTo(1).tab(RemnantsOfCuriosity.TAB).fireResistant());
+        super(properties.stacksTo(1).fireResistant());
     }
     @Override
     public boolean canEquipFromUse(SlotContext slotContext, ItemStack stack) {

@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "remnantsofcuriosity:items/weakness_curio"
+    "layer0": "remnantsofcuriosity:item/weakness_curio"
   }
 }

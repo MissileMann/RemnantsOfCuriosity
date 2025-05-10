@@ -18,12 +18,12 @@ import top.theillusivec4.curios.api.SlotTypePreset;
 public class RemnantsOfCuriosity {
     public static final String MODID = "remnantsofcuriosity";
 
-    public RemnantsOfCuriosity() {
-        IEventBus bus = FMLJavaModLoadingContext.get().getModEventBus();
+    public RemnantsOfCuriosity(FMLJavaModLoadingContext context) {
+        IEventBus modEventBus = context.getModEventBus();
 
-        bus.addListener(this::enqueueIMC);
-        ItemInit.ITEMS.register(bus);
-        AttributesInit.ATTRIBUTES.register(bus);
+        modEventBus.addListener(this::enqueueIMC);
+        ItemInit.ITEMS.register(modEventBus);
+        AttributesInit.ATTRIBUTES.register(modEventBus);
     }
 
     private void enqueueIMC(final InterModEnqueueEvent event) {
@@ -38,11 +38,11 @@ public class RemnantsOfCuriosity {
                         .build());
     }
 
-    public static final CreativeModeTab TAB = new CreativeModeTab(MODID) {
-        @Override
-        public @NotNull ItemStack makeIcon() {
-            return ItemInit.GOBLIN_TECH.get().getDefaultInstance();
-        }
-    };
+    //public static final CreativeModeTab TAB = new CreativeModeTab(MODID) {
+        //@Override
+        //public @NotNull ItemStack makeIcon() {
+        //    return ItemInit.GOBLIN_TECH.get().getDefaultInstance();
+        //}
+    //};
 
 }
