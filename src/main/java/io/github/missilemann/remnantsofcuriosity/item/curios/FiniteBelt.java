@@ -30,8 +30,8 @@ public class FiniteBelt extends RemnantCurio {
     public Multimap<Attribute, AttributeModifier> getAttributeModifiers(SlotContext slotContext, UUID uuid, ItemStack stack) {
         Multimap<Attribute, AttributeModifier> attributes = HashMultimap.create();
 
-        CuriosApi.getCuriosHelper().addSlotModifier(attributes, "waist",
-                UUID.fromString("a0463823-de88-4042-b82b-023cc1893be8"), 1, AttributeModifier.Operation.ADDITION);
+        CuriosApi.addSlotModifier(attributes, "charm",
+                UUID.fromString("a0463823-de88-4042-b82b-023cc1893be8"), 2, AttributeModifier.Operation.ADDITION);
 
         return attributes;
     }
